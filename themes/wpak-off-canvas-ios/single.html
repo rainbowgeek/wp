@@ -35,9 +35,18 @@
 		var year = date.getUTCFullYear();
 	%>
 
+	<div class="post-data">
+		<div class="nova_agenda_date"><%= post.nova_agenda_start_date %> au <%= post.nova_agenda_end_date %></div>
+		<div class="nova_agenda_time"><%= post.nova_agenda_time %></div>
+		<div class="nova_agenda_duration"><%= post.nova_agenda_duration %></div>
+		<div class="nova_agenda_prices"><%= post.nova_agenda_prices %></div>
+		<div class="nova_agenda_place"><%= post.nova_agenda_place %></div>
+	</div>
+ 	
+	
 	<div class="post-meta">
 		<div class="post-author"><%= post.author %></div>
 		<div class="post-publish-date"><%= month +'/'+ day +'/'+ year %></div>
 	</div>
-
+	<button onclick="window.plugins.socialsharing.shareViaFacebook('Message via Facebook', null /* img */, null /* url */, function() {console.log('share ok')}, function(errormsg){alert(errormsg)})">msg via Facebook (with errcallback)</button>
 </div>
