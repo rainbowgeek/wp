@@ -13,7 +13,7 @@
  * (AMD) Template Tags   avaialble as    TplTags
  * Velocity (http://julian.com/research/velocity/)
  */
-define(['jquery','core/theme-app','core/modules/storage','core/theme-tpl-tags','theme/js/comments','theme/js/jquery.velocity.min'],function($,App,Storage,TplTags,Velocity){
+define(['jquery','core/theme-app','core/modules/storage','core/theme-tpl-tags','theme/js/jquery.velocity.min'],function($,App,Storage,TplTags,Velocity){
 
 	/**
      * App Events
@@ -81,11 +81,6 @@ define(['jquery','core/theme-app','core/modules/storage','core/theme-tpl-tags','
         if (isMenuOpen) {
 			$("#app-canvas").css("left","85%"); 
 			closeMenu();
-		}
-        
-        // Comments hidden when submit
-        if ( current_screen.screen_type == 'comments' ) {
-			$('#waiting').hide();
 		}
 
 		// A Post or a Page is displayed
@@ -278,26 +273,7 @@ define(['jquery','core/theme-app','core/modules/storage','core/theme-tpl-tags','
 		e.preventDefault();
 		openWithInAppBrowser( e.target.href );
 	} );
-
-	$( "#container" ).on( "click", ".comments", function( e ) {
-		e.preventDefault();
-		
-		$('#waiting').show();
-		
-		App.displayPostComments( 
-			$(this).attr( 'data-post-id' ),
-			function( comments, post, item_global ) {
-				//Do something when comments display is ok
-				//We hide the waiting panel in 'screen:showed'
-			},
-			function( error ){
-				//Do something when comments display fail (note that an app error is triggered automatically)
-				$('#waiting').hide();
-			}
-		);
-	} );
-
-    
+   
     /**
      * @desc Show a message in the message bar during 3 sec
      */

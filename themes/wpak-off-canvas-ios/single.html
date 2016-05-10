@@ -49,6 +49,7 @@
 		<div class="post-publish-date"><%= month +'/'+ day +'/'+ year %></div>
 	</div>
 	
-	<button onclick="window.plugins.socialsharing.share('Message only')">message only</button>
-
+	<div class="wrap-share">
+		<button class="btn-share" onclick="window.plugins.socialsharing.share('Message only')"><div style="visibility:hidden"><%= post.title %>: <%= post.content %></div></button>
+	</div>
 </div>
