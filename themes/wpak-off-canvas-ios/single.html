@@ -2,7 +2,7 @@
  * Content is enclosed in <div id="app-content-wrapper"><div id="app-screen"></div></div>
 -->
 
-<div id="content" class=" content single-template">
+<div id="content" class="content single-template">
 
 	<div class="post-title">
 		<% if(  post.thumbnail && post.thumbnail.src && post.thumbnail.src.length ){ %>
@@ -48,5 +48,7 @@
 		<div class="post-author"><%= post.author %></div>
 		<div class="post-publish-date"><%= month +'/'+ day +'/'+ year %></div>
 	</div>
-	<button onclick="window.plugins.socialsharing.shareViaFacebook('Message via Facebook', null /* img */, null /* url */, function() {console.log('share ok')}, function(errormsg){alert(errormsg)})">msg via Facebook (with errcallback)</button>
+	
+	<button onclick="window.plugins.socialsharing.share('Message only')">message only</button>
+
 </div>
