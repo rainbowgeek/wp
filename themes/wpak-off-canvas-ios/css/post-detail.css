@@ -266,14 +266,13 @@
 	margin: 0px -10px 0px -10px;
 	border-bottom: 2px #00A2D3 solid;
 }
-
 .single-template .post-title h1 {
 	font-size: 28px;
 	line-height: 36px;
 	color: #024883;
 	margin: 10px 0px 0px 0px;
 }
-.single-template .wrap-share {
+.wrap-share {
     background-color: #F8F8F8;
     border-top: 1px #B2B2B2 solid;
     position: fixed;
@@ -286,7 +285,7 @@
     bottom: 0;
     text-align:right;
 }
-.single-template .wrap-share .btn-share {
+.wrap-share .btn-share {
     background: url('../img/share-icon.svg') no-repeat;
     width: 43px;
     height: 50px;
