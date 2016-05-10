@@ -1,0 +1,181 @@
+/**
+ * common.css : general rules (applied to all templates)
+ * custom.css : os specific rules (applied to all templates)
+ * post-detail.css : single.html and page.html specific rules
+ * post-list.css : archive.html specific rules
+ */
+
+
+
+/**
+ * @desc Fixes
+ */
+
+
+/**
+ * @desc Fixes the menu scrollbar bug
+ */
+.off-canvas-menu {
+	overflow-y: auto;
+}
+
+
+
+/**
+ * @desc General rules
+ */
+
+
+body {
+	background-color:#182C36;
+	font-family:"HelveticaNeue", sans-serif;
+}
+
+.button-tap-on {
+	opacity:0.1;
+	-webkit-transition:opacity 0.1s linear;
+}
+
+.button-tap-off {
+	opacity:1;
+	-webkit-transition:opacity 0.1s linear;
+}
+
+#app-menu {
+    -webkit-overflow-scrolling:touch; /* Enable srcolling bounce effect when reaching top or bottom */
+}
+
+.content {
+    -webkit-overflow-scrolling:touch; /* Enable srcolling bounce effect when reaching top or bottom */
+}
+
+/**
+ * @desc Action Bar
+ */
+
+
+.app-header {
+	background-color:#F8F8F8;
+	border-bottom:1px #B2B2B2 solid;
+}
+
+.app-message-bar {
+	background-color:#ff5555;
+	color:#3D1414;
+	border-top:1px #A13636 solid;
+	border-bottom:1px #A13636 solid;
+}
+
+.menu-button {
+	background-image:url('../img/menu-icon.svg');	
+	width:43px;
+	height:50px;
+}
+
+.refresh-off {
+	width:40px;
+	height:50px;
+	background-image:url('../img/refresh-off-icon.svg');
+}
+
+.refresh-on {
+	width:40px;
+	height:50px;
+	background-image:url('../img/refresh-on-icon.svg');
+}
+
+.app-header h1 {
+	font-family:HelveticaNeue-Medium,sans-serif;
+}
+
+.back-button {
+	position:absolute;
+	float: left;
+	background-repeat:no-repeat;
+	background-position:center;
+	background-image:url('../img/back-icon.svg');	
+	width:43px;
+	height:50px;
+}
+
+
+
+/**
+ * @desc Post list
+ */
+
+
+.list-template .list-title {
+	font-family:HelveticaNeue-Medium,sans-serif;
+}
+
+.list-template .content-date {
+    font-family:HelveticaNeue-Thin,sans-serif;
+}
+
+.list-template h2 {
+	font-family:HelveticaNeue-Medium,sans-serif;
+}
+
+
+
+/**
+ * @desc Post detail
+ */
+
+
+.single-template {
+	font-family:HelveticaNeue-Light,sans-serif;
+}
+
+.single-template h1 {
+	font-family:HelveticaNeue-Bold,sans-serif;
+}
+
+.single-template .post-excerpt {
+	font-family:HelveticaNeue-Bold,sans-serif;
+}
+
+.single-content h2 {
+	font-family:HelveticaNeue-Medium,sans-serif;
+}
+
+.single-content h3 {
+	font-family:HelveticaNeue-Medium,sans-serif;
+}
+
+.single-content h4 {
+	font-family:HelveticaNeue-Medium,sans-serif;
+}
+
+.single-content h5, .single-content h6 {
+	font-family:HelveticaNeue-Bold,sans-serif;
+}
+
+.single-content h5:after, .single-content h6:after {
+	font-family:HelveticaNeue-Bold,sans-serif;
+}
+
+.single-content strong {
+	font-family:HelveticaNeue-Bold,sans-serif;
+}
+
+.single-content em {
+	font-family:HelveticaNeue-Thin_Italic;
+}
+
+.single-content em strong, .single-content strong em {
+	font-family:HelveticaNeue-BoldItalic;
+}
+
+.single-content a:link {
+	font-family:HelveticaNeue-Medium;
+}
+
+.single-content blockquote p {
+	font-family:HelveticaNeue-BoldItalic;
+}
+
+.single-template .post-author {
+	font-family:HelveticaNeue-Medium;
+}

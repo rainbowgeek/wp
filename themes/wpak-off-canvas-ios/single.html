@@ -1,0 +1,43 @@
+<!--
+ * Content is enclosed in <div id="app-content-wrapper"><div id="app-screen"></div></div>
+-->
+
+<div id="content" class=" content single-template">
+
+	<div class="post-title">
+		<% if(  post.thumbnail && post.thumbnail.src && post.thumbnail.src.length ){ %>
+			<div class="post-thumbnail" style="background-image:url(<%= post.thumbnail.src %>);background-size:cover;"></div>
+		<% } %>	
+		<h1>
+			<%= post.title %>
+		</h1>
+		
+		<% if( post.nb_comments > 0 ){ %>
+            - <a class="comments" data-post-id="<%= post.id %>" href="#"><% print(post.nb_comments) %>&nbsp;comment<% post.nb_comments > 1 ? print('s') : '' %></a>
+	    <% } %>
+	    - <a class="comments" data-post-id="<%= post.id %>" href="#">Comment this post</a>
+	</div>
+
+	<div class="single-content">
+
+		<p class="post-excerpt"><%= post.excerpt %></p>
+
+		<%= post.content %>
+
+	</div>
+
+	<% 
+		var date = new Date(post.date*1000);
+		var month = date.getUTCMonth() + 1;
+		month = month < 10 ? '0' + month : month;
+		var day = date.getUTCDate();
+		day = day < 10 ? '0' + day : day;
+		var year = date.getUTCFullYear();
+	%>
+
+	<div class="post-meta">
+		<div class="post-author"><%= post.author %></div>
+		<div class="post-publish-date"><%= month +'/'+ day +'/'+ year %></div>
+	</div>
+
+</div>
