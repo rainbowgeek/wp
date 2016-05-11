@@ -5,7 +5,7 @@ define( function ( require ) {
 	return {
 		app_slug : 'agenda-ios',
 		wp_ws_url : 'http://agendacommune.novaldi.fr/wp-appkit-api/agenda-ios',
-		theme : 'wpak-off-canvas-ios',
+		theme : 'q-ios',
 		version : '1.0',
 		app_title : 'Agenda',
 		app_platform : 'ios',
