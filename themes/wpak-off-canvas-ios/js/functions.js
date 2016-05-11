@@ -13,8 +13,144 @@
  * (AMD) Template Tags   avaialble as    TplTags
  * Velocity (http://julian.com/research/velocity/)
  */
-define(['jquery','core/theme-app','core/modules/storage','core/theme-tpl-tags','theme/js/jquery.velocity.min'],function($,App,Storage,TplTags,Velocity){
+define(['jquery', 'core/theme-app','core/modules/storage','core/theme-tpl-tags','theme/js/velocity.min'],function($,App,Storage,TplTags,Velocity){
+	 /**
+     * Transitions
+     */
+    App.setParam( 'custom-screen-rendering', true ); // Don't use default transitions and displays for screens
+    
+    App.action('screen-transition',function(
+    	    $wrapper,
+    	    $current,
+    	    $next,
+    	    next_screen,
+    	    current_screen,
+    	    $deferred ) {
 
+    	    // Get the direction keyword from current screen and  previous screen
+    	    var direction = App.getTransitionDirection( next_screen, current_screen );
+
+    	    // Launch proper transition
+    	    switch ( direction ) {
+    	        case 'next-screen': // eg. Archive to single
+    	            transition_slide_next_screen($wrapper, $current, $next, next_screen, current_screen, $deferred);
+    	            break;
+    	        case 'previous-screen': // eg. Single to archive
+    	            transition_slide_previous_screen($wrapper, $current, $next, next_screen, current_screen, $deferred);
+    	            break;
+    	        default: // Unknown direction
+    	            transition_default( $wrapper, $current, $next, next_screen, current_screen, $deferred );
+    	            break;
+    	    }
+
+	});
+    transition_default = function ( $wrapper, $current, $next, next_screen, current_screen, $deferred ) {
+    	$wrapper.append($next); // Add the next screen to the DOM / Mandatory first action (notably to get scrollTop() working)
+
+        // 1. Prepare next screen (the destination screen is not visible. We are before the animation)
+
+        // Hide the single screen on the right
+        $next.css({
+            left: '100%'
+        });
+
+        // 2. Animate to display next screen
+
+        // Slide screens wrapper from right to left
+        $wrapper.velocity({
+            left: '-100%'
+        },{
+            duration: 300,
+            easing: 'ease-out',
+            complete: function () {
+
+                // remove the screen that has been transitioned out
+                $current.remove();
+
+                // remove CSS added specically for the transition
+                $wrapper.attr( 'style', '' );
+
+                $next.css({
+                    left: '',
+                });
+
+                $deferred.resolve(); // Transition has ended, we can pursue the normal screen display steps (screen:showed)
+            }
+        });
+    }
+    
+    transition_slide_next_screen = function ( $wrapper, $current, $next, next_screen, current_screen, $deferred ) {
+
+        $wrapper.append($next); // Add the next screen to the DOM / Mandatory first action (notably to get scrollTop() working)
+
+        // 1. Prepare next screen (the destination screen is not visible. We are before the animation)
+
+        // Hide the single screen on the right
+        $next.css({
+            left: '100%'
+        });
+
+        // 2. Animate to display next screen
+
+        // Slide screens wrapper from right to left
+        $wrapper.velocity({
+            left: '-100%'
+        },{
+            duration: 300,
+            easing: 'ease-out',
+            complete: function () {
+
+                // remove the screen that has been transitioned out
+                $current.remove();
+
+                // remove CSS added specically for the transition
+                $wrapper.attr( 'style', '' );
+
+                $next.css({
+                    left: '',
+                });
+
+                $deferred.resolve(); // Transition has ended, we can pursue the normal screen display steps (screen:showed)
+            }
+        });
+    }
+    
+    transition_slide_previous_screen = function ( $wrapper, $current, $next, next_screen, current_screen, $deferred ) {
+
+        $wrapper.prepend($next); // Add the next screen to the DOM / Mandatory first action (notably to get scrollTop() working)
+
+        // 1. Prepare next screen (the destination screen is not visible. We are before the animation)
+
+        // Hide the archive screen on the left
+        $next.css( {
+            left: '-100%'
+        } );
+
+        // 2. Animate to display next screen
+
+        // Slide screens wrapper from left to right
+        $wrapper.velocity({
+            left: '100%'
+        },{
+            duration: 300,
+            easing: 'ease-out',
+            complete: function () {
+
+                // remove the screen that has been transitioned out
+                $current.remove();
+
+                // remove CSS added specically for the transition
+                $wrapper.attr( 'style', '' );
+
+                $next.css( {
+                    left: '',
+                } );
+
+                $deferred.resolve(); // Transition has ended, we can pursue the normal screen display steps (screen:showed)
+            }
+        });
+    }    
+    
 	/**
      * App Events
      */
@@ -46,7 +182,7 @@ define(['jquery','core/theme-app','core/modules/storage','core/theme-tpl-tags','
          * @todo messages should be centralized to ease translations
          */
 		if ( result.ok ) {
-			showMessage("Content updated successfully :)");
+			showMessage("Contenu mis à jour avec succès !");
 		}else{
 			showMessage(result.message);
 		}
@@ -354,111 +490,5 @@ define(['jquery','core/theme-app','core/modules/storage','core/theme-tpl-tags','
         window.open(e.target.href,"_blank","location=yes");
         e.preventDefault();
     }
-    
-    /**
-     * Transitions
-     */
-//    App.setParam( 'custom-screen-rendering', true ); // Don't use default transitions and displays for screens
-//    
-//    App.action('screen-transition',function(
-//	    $wrapper,
-//	    $current,
-//	    $next,
-//	    next_screen,
-//	    current_screen,
-//	    $deferred ) {
-//
-//	    // Get the direction keyword from current screen and  previous screen
-//	    var direction = App.getTransitionDirection( next_screen, current_screen );
-//
-//	    // Launch proper transition
-//	    switch ( direction ) {
-//	        case 'next-screen': // eg. Archive to single
-//	        	alert('test');
-//	            transition_slide_next_screen($wrapper, $current, $next, next_screen, current_screen, $deferred);
-//	            break;
-//	        case 'previous-screen': // eg. Single to archive
-//	        	alert('test2');
-//	            transition_slide_previous_screen($wrapper, $current, $next, next_screen, current_screen, $deferred);
-//	            break;
-//	        default: // Unknown direction
-//	        	alert('test3');
-//	        	transition_default( $wrapper, $current, $next, next_screen, current_screen, $deferred );
-//	            break;
-//	    }
-//
-//	});
-//    
-//    transition_slide_next_screen = function ( $wrapper, $current, $next, next_screen, current_screen, $deferred ) {
-//
-//        $wrapper.append($next); // Add the next screen to the DOM / Mandatory first action (notably to get scrollTop() working)
-//
-//        // 1. Prepare next screen (the destination screen is not visible. We are before the animation)
-//
-//        // Hide the single screen on the right
-//        $next.css({
-//            left: '100%'
-//        });
-//
-//        // 2. Animate to display next screen
-//
-//        // Slide screens wrapper from right to left
-//        $wrapper.velocity({
-//            left: '-100%'
-//        },{
-//            duration: 300,
-//            easing: 'ease-out',
-//            complete: function () {
-//
-//                // remove the screen that has been transitioned out
-//                $current.remove();
-//
-//                // remove CSS added specically for the transition
-//                $wrapper.attr( 'style', '' );
-//
-//                $next.css({
-//                    left: '',
-//                });
-//
-//                $deferred.resolve(); // Transition has ended, we can pursue the normal screen display steps (screen:showed)
-//            }
-//        });
-//    }
-//    
-//    transition_slide_previous_screen = function ( $wrapper, $current, $next, next_screen, current_screen, $deferred ) {
-//
-//        $wrapper.prepend($next); // Add the next screen to the DOM / Mandatory first action (notably to get scrollTop() working)
-//
-//        // 1. Prepare next screen (the destination screen is not visible. We are before the animation)
-//
-//        // Hide the archive screen on the left
-//        $next.css( {
-//            left: '-100%'
-//        } );
-//
-//        // 2. Animate to display next screen
-//
-//        // Slide screens wrapper from left to right
-//        $wrapper.velocity({
-//            left: '100%'
-//        },{
-//            duration: 300,
-//            easing: 'ease-out',
-//            complete: function () {
-//
-//                // remove the screen that has been transitioned out
-//                $current.remove();
-//
-//                // remove CSS added specically for the transition
-//                $wrapper.attr( 'style', '' );
-//
-//                $next.css( {
-//                    left: '',
-//                } );
-//
-//                $deferred.resolve(); // Transition has ended, we can pursue the normal screen display steps (screen:showed)
-//            }
-//        });
-//    }
 
 });
