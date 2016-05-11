@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<widget xmlns       = "http://www.w3.org/ns/widgets"
+        xmlns:gap   = "http://phonegap.com/ns/1.0"
+        id          = "com.agenda_wp.app"
+        versionCode = ""
+        version     = "1.0" >
+
+	<name>Agenda</name>
+
+	<description>Application d'agenda</description>
+
+	<author href="http://www.novaldi.com" email="novaldi@novaldi.com">Novaldi</author>
+
+	<gap:platform name="ios" />
+
+	<preference name="DisallowOverscroll" value="true" />
+	<preference name="webviewbounce" value="false" />
+
+	<!-- PhoneGap plugin declaration -->
+	<plugin name="cordova-plugin-inappbrowser" source="npm" />
+	<plugin name="cordova-plugin-network-information" source="npm" />
+	<plugin name="cordova-plugin-splashscreen" source="npm" />
+	<plugin name="cordova-plugin-device" source="npm" />
+	<plugin name="cordova-plugin-statusbar" source="npm" />
+	<plugin name="nl.x-services.plugins.socialsharing" spec="4.3.8" source="pgb" />
+	<plugin name="cordova-plugin-geolocation" spec="1.0.1" source="pgb" />
+	<plugin name="org.apache.cordova.contacts" spec="0.2.16" source="pgb" />
+	<plugin name="org.apache.cordova.dialogs" spec="0.3.0" source="pgb" />
+
+	<!-- SplashScreen configuration -->
+	<preference name="AutoHideSplashScreen" value="false" />
+	<preference name="ShowSplashScreenSpinner" value="false" />
+	<gap:config-file platform="ios" parent="UIStatusBarHidden"><true/></gap:config-file>
+	<gap:config-file platform="ios" parent="UIViewControllerBasedStatusBarAppearance"><false/></gap:config-file>
+	
+	<!-- Icons and Splashscreens declaration -->
+
+	<!-- iPhone 6 / 6+ -->
+	<icon src="./icons/icon-60@3x.png" gap:platform="ios" width="180" height="180" />
+	
+	<!-- Icons iOS 7.0+ -->
+	
+	<!-- iPhone / iPod Touch  -->
+	<icon src="./icons/icon-60.png" gap:platform="ios" width="60" height="60" />
+	<icon src="./icons/icon-60@2x.png" gap:platform="ios" width="120" height="120" />
+	
+	<!-- Spotlight Icon -->
+	<icon src="./icons/icon-40.png" gap:platform="ios" width="40" height="40" />
+	<icon src="./icons/icon-40@2x.png" gap:platform="ios" width="80" height="80" />
+	
+	<!-- iPad -->
+	<icon src="./icons/icon-72.png" gap:platform="ios" width="72" height="72" />
+	<icon src="./icons/icon-76.png" gap:platform="ios" width="76" height="76" />
+	<icon src="./icons/icon-76@2x.png" gap:platform="ios" width="152" height="152" />
+	
+	<!-- Icons iOS 6.1 -->
+	
+	<!-- iPhone / iPod Touch -->
+	<icon src="./icons/icon.png" gap:platform="ios" width="57" height="57" />
+	<icon src="./icons/icon@2x.png" gap:platform="ios" width="114" height="114" />
+	
+	<!-- iPhone Spotlight and Settings Icon -->
+	<icon src="./icons/icon-small.png" gap:platform="ios" width="29" height="29" />
+	<icon src="./icons/icon-small@2x.png" gap:platform="ios" width="58" height="58" />
+	
+	<!-- Splashscreens -->
+	
+	<!-- iPhone and iPod touch -->
+	<gap:splash src="./splashscreens/Default.png" gap:platform="ios" width="320" height="480" />
+	<gap:splash src="./splashscreens/Default@2x.png" gap:platform="ios" width="640" height="960" />
+	
+	<!-- iPhone 5 / iPod Touch (5th Generation) -->
+	<gap:splash src="./splashscreens/Default-568h@2x.png" gap:platform="ios" width="640" height="1136" />
+	
+	<!-- iPhone 6 -->
+	<gap:splash src="./splashscreens/Default-667h@2x.png" gap:platform="ios" width="750" height="1334" />
+	<gap:splash src="./splashscreens/Default-Portrait-736h@3x.png" gap:platform="ios" width="1242" height="2208" />
+	<gap:splash src="./splashscreens/Default-Landscape-736h@3x.png" gap:platform="ios" width="2208" height="1242" />
+</widget>

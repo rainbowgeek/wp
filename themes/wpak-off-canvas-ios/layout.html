@@ -1,0 +1,75 @@
+<!--
+ * Layout is enclosed in <div id="app-layout"></div>
+-->
+
+<!--
+ * Menu is enclosed in <div id="app-menu"></div>
+-->
+<%= menu %>
+
+<script>
+var onSuccess = function(position) {
+    alert('Latitude: '          + position.coords.latitude          + '\n' +
+          'Longitude: '         + position.coords.longitude         + '\n' +
+          'Altitude: '          + position.coords.altitude          + '\n' +
+          'Accuracy: '          + position.coords.accuracy          + '\n' +
+          'Altitude Accuracy: ' + position.coords.altitudeAccuracy  + '\n' +
+          'Heading: '           + position.coords.heading           + '\n' +
+          'Speed: '             + position.coords.speed             + '\n' +
+          'Timestamp: '         + position.timestamp                + '\n');
+};
+
+// onError Callback receives a PositionError object
+//
+function onError(error) {
+    alert('code: '    + error.code    + '\n' +
+          'message: ' + error.message + '\n');
+}
+
+//display the address information for all contacts
+
+function onSuccess(contacts) {
+    for (var i = 0; i < contacts.length; i++) {
+        for (var j = 0; j < contacts[i].addresses.length; j++) {
+            alert("Pref: "         + contacts[i].addresses[j].pref          + "\n" +
+                "Type: "           + contacts[i].addresses[j].type          + "\n" +
+                "Formatted: "      + contacts[i].addresses[j].formatted     + "\n" +
+                "Street Address: " + contacts[i].addresses[j].streetAddress + "\n" +
+                "Locality: "       + contacts[i].addresses[j].locality      + "\n" +
+                "Region: "         + contacts[i].addresses[j].region        + "\n" +
+                "Postal Code: "    + contacts[i].addresses[j].postalCode    + "\n" +
+                "Country: "        + contacts[i].addresses[j].country);
+        }
+    }
+};
+
+function onError(contactError) {
+    alert('onError!');
+};
+
+// find all contacts
+var options = new ContactFindOptions();
+options.filter = "";
+var filter = ["displayName", "addresses"];
+
+</script>
+
+<div id="app-canvas">
+
+    <div id="app-header" class="app-header">
+        <div id="menu-button" class="menu-button"></div>
+        <div id="back-button" class="back-button" style="display:none;"></div>
+        <div id="refresh-button" class="refresh-off"></div>
+        <button onclick="navigator.geolocation.getCurrentPosition(onSuccess, onError);">Locate me</button>
+        <button onclick="navigator.contacts.find(filter, onSuccess, onError, options);">Contacts</button>
+        <h1><%= app_title %></h1>
+    </div>
+
+    <div id="app-message-bar" class="app-message-bar">message</div>
+
+    <!--
+     * Content is enclosed in <div id="app-content-wrapper"><div id="app-screen"></div></div>
+    -->
+    <%= content %>
+
+</div>
