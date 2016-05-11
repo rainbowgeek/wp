@@ -75,7 +75,14 @@ body {
 /*
  * @desc Enclose content (auto-added) 
  */
-#app-content-wrapper {}
+#app-content-wrapper {
+	position: absolute;
+    top: 0px;
+    left: 0px;
+    height: 100%;
+    width: 100%;
+    z-index: -1; /* z-index relative to #app-canvas */
+}
 
 /*
  * @desc Enclose content (auto-added) 
@@ -202,12 +209,13 @@ body {
 
 .content {
     position: absolute;
-    top: 50px;
+    top: 0;
     bottom: 0px;
     left: 0px;
-	width: 100%;
+    width: 100%;
     overflow-y: scroll;
-    z-index: 0; /* z-index relative to #app-canvas */
+    z-index: -1;
+    padding-top: 50px;
 }
 
 /*
