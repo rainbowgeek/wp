@@ -6,7 +6,7 @@
 
 <div id="content" class="content list-template">
 	<div id="filter-form" style="display: none">
-		<input type="text" value="<%= current_search.search_string %>" id="search_string" placeholder="Mots à rechercher...">
+		<input type="text" value="<%= current_search.search_string %>" id="search_string" placeholder="Saisissez un mot clé...">
 		<select id="agenda_cat">
 			<option value="">Choisir une catégorie</option>
 			<% _.each( agenda_cats, function( agenda_cat ) { %>
