@@ -48,7 +48,7 @@ define([
      */
     try { // Testing if the Cordova plugin is available
         StatusBar.overlaysWebView(false);
-        StatusBar.styleDefault();
+        StatusBar.styleLightContent();
         StatusBar.backgroundColorByHexString("#293E7E");
     } catch(e) {
         console.log("StatusBar plugin not available - you're probably in the browser");
