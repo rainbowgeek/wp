@@ -12,7 +12,7 @@ define( function ( require ) {
 		gmt_offset : 2,
 		debug_mode : 'off',
 		auth_key : '|mUSE(Kh7t?L+I{= ,/^eQ26cO`[J+ef7Sg{h~a/Z-SiVke)-pr+&9|,MYF7B()2',
-		options : {"refresh_interval":0},
+		options : {"refresh_interval":0,"agenda_cat":[{"slug":"expositions","name":"Expositions"},{"slug":"fetes","name":"F\u00eates"},{"slug":"formations","name":"Formations"},{"slug":"spectacles","name":"Spectacles"}],"agenda_city":[{"slug":"mourenx","name":"Mourenx"}]},
 		addons : []
 	};
 
