@@ -7,7 +7,17 @@
 -->
 
 <div id="content" class="content single-template">
+	
+	<% if(  post.thumbnail && post.thumbnail.src && post.thumbnail.src.length ){ %>
 
+        <img class="post-thumbnail" src="<%= post.thumbnail.src %>" onerror="displayDefaultImage(this);" />
+        
+        <% if (post.thumbnail.caption) { %>
+            <div class="post-thumbnail-caption"><%= post.thumbnail.caption %></div>
+        <% } %>
+
+    <% } %>	
+    
     <div class="post-title">
 
         <% if ( post.subhead ) { %>
@@ -31,16 +41,6 @@
         </div>
 
     </div>
-
-    <% if(  post.thumbnail && post.thumbnail.src && post.thumbnail.src.length ){ %>
-
-        <img class="post-thumbnail" src="<%= post.thumbnail.src %>" onerror="displayDefaultImage(this);" />
-        
-        <% if (post.thumbnail.caption) { %>
-            <div class="post-thumbnail-caption"><%= post.thumbnail.caption %></div>
-        <% } %>
-
-    <% } %>	
             
     <div id="single-content" class="single-content">
 

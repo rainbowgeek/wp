@@ -8,17 +8,6 @@
 
 
 /*
- * Fonts
- */
-
-@font-face {
-	font-family : "PT Serif Regular";
-	src : url('../fonts/PT-Serif-Regular.ttf');
-}
-
-
-
-/*
  * General screen rules
  */
 
@@ -81,6 +70,13 @@ a {
     overflow-y: scroll;
     -webkit-overflow-scrolling:touch; /* Enables scrolling bounce effect when reaching top or bottom */
     background: #293E7E;
+}
+
+.bg-logo-menu {
+	width: 100%;
+    padding: 10px;
+    position: absolute;
+    bottom: 0;
 }
 
 /* Encloses nav bar, content and toolbar  */
@@ -183,38 +179,39 @@ a {
  * Search filters
 */
 #filter-form {
-    display: block;
-    width: 100%;
-    padding: 10px;
-    background-color: rgba(212, 212, 212, 0.8);
-    position: absolute;
-    box-shadow: 0 0 10px #999;
-    -webkit-backdrop-filter: blur(10px);
-    z-index: 1500;
-    top: 44px;
-    left: 0;
-    overflow: hidden;
+	display: block;
+	width: 100%;
+	padding: 20px;
+	background-color: rgba(255, 255, 255, 0.6);
+	position: fixed;
+	-webkit-backdrop-filter: blur(10px);
+	z-index: 1500;
+	top: 44px;
+	overflow: hidden;
+	-webkit-backface-visibility: hidden;
+	transform: translate3d(0, 0, 0);
+	will-change: transform;
 }
 #filter-form input, #filter-form select {
-    display: inline-block;
-    width: calc(100% - 20px);
-    padding: 5px;
-    background: #fff;
-    margin: 0 10px 10px 10px;
-    border: none;
-    border-radius: 4px;
-    height: 40px;
+	display: inline-block;
+	width: 100%;
+	padding: 5px;
+	background: #fff;
+	margin: 0 10px 10px 0px;
+	border: none;
+	border-radius: 5px;
+	height: 26px;
+	-webkit-appearance: none;
 }
 #filter-form #go-filter {
-    width: calc(100% - 20px);
+    width: 100%;
     color: #fff;
     display: inline-block;
     text-decoration: none;
     background: #293E7E;
     padding: 10px;
     text-align: center;
-    margin: 0 0 0 10px;
-    text-transform: uppercase;
+    margin: 0;
     font-weight: bold;
     border-radius: 4px;
 }

@@ -12,6 +12,13 @@
 	<author href="http://www.novaldi.com" email="novaldi@novaldi.com">Novaldi</author>
 
 	<gap:platform name="ios" />
+  
+    <!-- Language -->
+    <gap:config-file platform="ios" parent="CFBundleLocalizations" mode="replace">
+      <array>
+          <string>fr</string>
+      </array>
+    </gap:config-file>
 
 	<preference name="DisallowOverscroll" value="true" />
 	<preference name="webviewbounce" value="false" />

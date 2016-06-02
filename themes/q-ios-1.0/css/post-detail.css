@@ -31,7 +31,6 @@
 	margin: 19px 0px 17px 0px;
 	font-size: 18px;
     line-height: 24px;
-	font-family:HelveticaNeue-Bold,sans-serif;
 }
 
 
@@ -41,7 +40,6 @@
  */
 
 .single-content p {
-    font-family: 'PT Serif Regular', Georgia, serif;
     color: #4c4c4c;
 	font-size: 17px;
 	line-height: 27px;
@@ -103,7 +101,6 @@
  */
 
 .single-content ul, .single-content ol {
-    font-family: 'PT Serif Regular', Georgia, serif;
 	font-size: 17px;
 	line-height: 27px;
 	margin: -5px 0px 20px 0px;
@@ -132,7 +129,6 @@
 	font-size: 17px;
 	line-height: 27px;
 	text-align: left;
-    font-family: 'PT Serif Regular', Georgia, serif;
     color: #4c4c4c;
 	font-size: 17px;
 	line-height: 27px;
@@ -188,8 +184,20 @@
 
 .single-template .post-meta {
     font-size: 14px;
-    color: #a1a1a1;
+    color: #3b393d;
     padding-top: 5px;
+}
+
+.single-template .post-meta ul {
+    padding: 0;
+    margin: 20px 0 0 0;
+    list-style: none;
+}
+
+.single-template .post-meta ul li {
+    margin: 0 0 10px 0;
+    font-variant: small-caps;
+    font-weight: bold;
 }
 
 .single-template .post-author {
@@ -211,13 +219,15 @@
  */
 
 .single-template .post-title {
-	padding: 30px 20px 0px 20px;
+	padding: 10px 20px 0px 20px;
     margin-bottom: 15px;
 }
 
 .single-template .post-thumbnail {
     width: 100%;
     margin: 0;
+    max-height: 200px;
+    object-fit: cover;
 }
 
 .single-template .post-thumbnail-caption {
@@ -231,11 +241,10 @@
 }
 
 .single-template .post-title h1 {
-    font-size: 21px;
-	line-height: 24px;
-	color: #333;
-	margin: 10px 0px 0px 0px;
-    
+    font-size: 24px;
+    line-height: 28px;
+    color: #333;
+    margin: 10px 0px 0px 0px;
 }
 
 .subhead {
@@ -244,7 +253,6 @@
     text-transform: uppercase;
     line-height: 13px;
     margin-bottom: 9px;
-    font-family:HelveticaNeue-Bold,sans-serif;
 }
 
 
