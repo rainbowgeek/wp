@@ -12,13 +12,8 @@
 	<author href="http://www.novaldi.com" email="novaldi@novaldi.com">Novaldi</author>
 
 	<gap:platform name="ios" />
-  
-    <!-- Language -->
-    <gap:config-file platform="ios" parent="CFBundleLocalizations" mode="replace">
-      <array>
-          <string>fr</string>
-      </array>
-    </gap:config-file>
+
+	<preference name="phonegap-version" value="cli-6.3.0" />
 
 	<preference name="DisallowOverscroll" value="true" />
 	<preference name="webviewbounce" value="false" />
@@ -30,6 +25,7 @@
 	<plugin name="cordova-plugin-device" source="npm" />
 	<plugin name="cordova-plugin-statusbar" source="npm" />
 	<plugin name="nl.x-services.plugins.socialsharing" spec="4.3.8" source="pgb" />
+	<plugin name="plugin.google.maps.menusito" spec="1.2.5" source="pgb" />
 
 	<!-- SplashScreen configuration -->
 	<preference name="AutoHideSplashScreen" value="false" />
