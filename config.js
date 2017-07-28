@@ -5,6 +5,7 @@ define( function ( require ) {
 	return {
 		app_slug : 'agenda-ios',
 		wp_ws_url : 'http://agendacommune.novaldi.fr/wp-appkit-api/agenda-ios',
+		wp_url : 'http://agendacommune.novaldi.fr',
 		theme : 'q-ios-1.0',
 		version : '1.0',
 		app_title : 'Agenda',
@@ -13,6 +14,7 @@ define( function ( require ) {
 		debug_mode : 'off',
 		auth_key : '|mUSE(Kh7t?L+I{= ,/^eQ26cO`[J+ef7Sg{h~a/Z-SiVke)-pr+&9|,MYF7B()2',
 		options : {"refresh_interval":0,"agenda_cat":[{"slug":"expositions","name":"Expositions"},{"slug":"fetes","name":"F\u00eates"},{"slug":"formations","name":"Formations"},{"slug":"spectacles","name":"Spectacles"}],"agenda_city":[{"slug":"mourenx","name":"Mourenx"}]},
+		theme_settings : [],
 		addons : []
 	};
 

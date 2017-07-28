@@ -7,13 +7,16 @@
 
 	<name>Agenda</name>
 
-	<description>Application d'agenda</description>
+	<description>Application d&#039;agenda</description>
 
 	<author href="http://www.novaldi.com" email="novaldi@novaldi.com">Novaldi</author>
 
 	<gap:platform name="ios" />
+	
+	<!-- General preferences -->
 
-	<preference name="phonegap-version" value="cli-6.3.0" />
+	<preference name="phonegap-version" value="cli-6.5.0" />
+	<preference name="permissions" value="none"/>
 
 	<preference name="DisallowOverscroll" value="true" />
 	<preference name="webviewbounce" value="false" />
@@ -24,15 +27,15 @@
 	<plugin name="cordova-plugin-splashscreen" source="npm" />
 	<plugin name="cordova-plugin-device" source="npm" />
 	<plugin name="cordova-plugin-statusbar" source="npm" />
-	<plugin name="nl.x-services.plugins.socialsharing" spec="4.3.8" source="pgb" />
-	<plugin name="plugin.google.maps.menusito" spec="1.2.5" source="pgb" />
+	<plugin name="cordova-plugin-x-socialsharing" source="npm" />
 
 	<!-- SplashScreen configuration -->
 	<preference name="AutoHideSplashScreen" value="false" />
+	<preference name="FadeSplashScreenDuration" value="1000" />
 	<preference name="ShowSplashScreenSpinner" value="false" />
 	<gap:config-file platform="ios" parent="UIStatusBarHidden"><true/></gap:config-file>
 	<gap:config-file platform="ios" parent="UIViewControllerBasedStatusBarAppearance"><false/></gap:config-file>
-	
+
 	<!-- Icons and Splashscreens declaration -->
 
 	<icon src="icons/icon-60@3x.png" gap:platform="ios" width="180" height="180" />
