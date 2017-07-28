@@ -230,7 +230,7 @@ define([
 		});
 
         // Compose the comments button label (in the toolbar)
-        setCommentsButton(current_screen);
+        //setCommentsButton(current_screen);
         
         // Display the toolbar
         $("#app-toolbar").css({
@@ -979,49 +979,49 @@ define([
         );
     }
 
-    /*
-     * 6. Comments button
-     */
-    
-    // @desc set comments button label
-    function setCommentsButton(current_screen) {
-
-        var screenData;
-        
-        if (current_screen.screen_type == 'single') {
-            screenData = current_screen.data.post;
-        }
-        
-        if (current_screen.screen_type == 'page') {
-            screenData = current_screen.data.item;            
-        }
-        
-        $('#comments-button').attr('post-id',screenData.id);
-        
-        var nbComments = screenData.nb_comments;
-        var commentsLabel = nbComments + " commentaire"; // Default singular label
-        
-        if (nbComments > 0) { // If post has comments
-            
-            $('#comments-button').attr('has-comments','true');
-            
-            // Handle plural label if there's more than one comment
-            if (nbComments > 1) {
-                commentsLabel += "s";
-            }
-            
-            // @todo: change to span with dedicated class
-            commentsLabel = '<a>' + commentsLabel + '</a>';
-            
-        } else { // No comments label
-            $('#comments-button').attr('has-comments','false');
-            commentsLabel = '<span  class="no-comment">' + commentsLabel + '</span>';
-        }
-
-        // Display comments label
-        $("#comments-button").empty().html(commentsLabel); 
-
-    }
+//    /*
+//     * 6. Comments button
+//     */
+//    
+//    // @desc set comments button label
+//    function setCommentsButton(current_screen) {
+//
+//        var screenData;
+//        
+//        if (current_screen.screen_type == 'single') {
+//            screenData = current_screen.data.post;
+//        }
+//        
+//        if (current_screen.screen_type == 'page') {
+//            screenData = current_screen.data.item;            
+//        }
+//        
+//        $('#comments-button').attr('post-id',screenData.id);
+//        
+//        var nbComments = screenData.nb_comments;
+//        var commentsLabel = nbComments + " commentaire"; // Default singular label
+//        
+//        if (nbComments > 0) { // If post has comments
+//            
+//            $('#comments-button').attr('has-comments','true');
+//            
+//            // Handle plural label if there's more than one comment
+//            if (nbComments > 1) {
+//                commentsLabel += "s";
+//            }
+//            
+//            // @todo: change to span with dedicated class
+//            commentsLabel = '<a>' + commentsLabel + '</a>';
+//            
+//        } else { // No comments label
+//            $('#comments-button').attr('has-comments','false');
+//            commentsLabel = '<span  class="no-comment">' + commentsLabel + '</span>';
+//        }
+//
+//        // Display comments label
+//        $("#comments-button").empty().html(commentsLabel); 
+//
+//    }
     
     // @desc Finger taps the close button
     function closePanelButtonTapOn(e) {
