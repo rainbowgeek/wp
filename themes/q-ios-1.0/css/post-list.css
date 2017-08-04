@@ -50,7 +50,6 @@
     position: absolute;
     color: #fff;
     bottom: 0;
-    -webkit-backdrop-filter: blur(10px);
     padding: 10px;
     z-index: 100;
     width: 100%;

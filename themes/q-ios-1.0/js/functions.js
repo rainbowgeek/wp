@@ -1269,12 +1269,17 @@ define([
     function calendarButtonTapOn(e) {
         e.preventDefault();
         
-        var startDate = new Date($("#add-to-calendar").attr('data-start-date')); // beware: month 0 = january, 11 = december
-        if ($("#add-to-calendar").attr('data-end-date')) {
-        	var endDate = new Date($("#add-to-calendar").attr('data-end-date'));
-        } else {
-        	var endDate = new Date($("#add-to-calendar").attr('data-start-date'));
-        }
+//        var startDate = new Date($("#add-to-calendar").attr('data-start-date')); // beware: month 0 = january, 11 = december
+//        if ($("#add-to-calendar").attr('data-end-date')) {
+//        	var endDate = new Date($("#add-to-calendar").attr('data-end-date'));
+//        } else {
+//        	var endDate = new Date($("#add-to-calendar").attr('data-start-date'));
+//        }
+        
+        var startDate = new Date(2015,2,15,18,30,0,0,0); // beware: month 0 = january, 11 = december
+        var endDate = new Date(2015,2,15,19,30,0,0,0);
+        
+        
         var title = $("#add-to-calendar").attr('data-title');
         var eventLocation = $("#add-to-calendar").attr('data-location');
         var success = function(message) { alert("Success: " + JSON.stringify(message)); };
