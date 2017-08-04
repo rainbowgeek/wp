@@ -28,6 +28,7 @@
 	<plugin name="cordova-plugin-device" source="npm" />
 	<plugin name="cordova-plugin-statusbar" source="npm" />
 	<plugin name="cordova-plugin-x-socialsharing" source="npm" />
+	<plugin name="cordova-plugin-calendar" source="npm" />
 
 	<!-- SplashScreen configuration -->
 	<preference name="AutoHideSplashScreen" value="false" />

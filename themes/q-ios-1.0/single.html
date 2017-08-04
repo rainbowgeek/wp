@@ -52,10 +52,10 @@
 			
 	</div>	
 			<% if (post.nova_agenda_end_date_calendar) { %> 
-	        	<div id="add-to-calendar" style="display:none" data-href="data:text/calendar;charset=utf8,BEGIN:VCALENDAR%0AVERSION:2.0%0ABEGIN:VEVENT%0ADTSTART:<%= post.nova_agenda_start_date_calendar %>%0ADTEND:<%= post.nova_agenda_end_date_calendar %>%0ASUMMARY:<%= post.title %>%0ALOCATION:<%= post.nova_agenda_city %>%0AEND:VEVENT%0AEND:VCALENDAR">
+	        	<div id="add-to-calendar" style="display:none" data-start-date="<%= post.nova_agenda_start_date_calendar %>" data-end-date="<%= post.nova_agenda_end_date_calendar %>" data-title="<%= post.title %>" data-location="<%= post.nova_agenda_city %>">
 				</div>
 			<% } else { %>
-				<div id="add-to-calendar" style="display:none" data-href="data:text/calendar;charset=utf8,BEGIN:VCALENDAR%0AVERSION:2.0%0ABEGIN:VEVENT%0ADTSTART:<%= post.nova_agenda_start_date_calendar %>%0ASUMMARY:<%= post.title %>%0ALOCATION:<%= post.nova_agenda_city %>%0AEND:VEVENT%0AEND:VCALENDAR">
+	        	<div id="add-to-calendar" style="display:none" data-start-date="<%= post.nova_agenda_start_date_calendar %>" data-title="<%= post.title %>" data-location="<%= post.nova_agenda_city %>">
 				</div>
 			<% } %>
     <div id="widget-latest-posts" class="widget-latest-posts">
