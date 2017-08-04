@@ -749,7 +749,7 @@ define([
 //    $("#app-layout").on("touchend","#comments-button",commentsButtonTapOff);
     
 //    // Add to calendar button events
-    $("#app-layout").on("touchstart","#calendar-button",calendarButtonTapOn);
+    $("#app-layout").on("click","#calendar-button",calendarButtonTapOn);
 //    $("#app-layout").on("touchend","#calendar-button",calendarButtonTapOff);
 
     // Share button events
@@ -1268,6 +1268,7 @@ define([
     // @desc Finger taps the calendar button
     function calendarButtonTapOn(e) {
         e.preventDefault();
+        $("#calendar-button").on("click","a",openInBrowser);
         $("#calendar-button").attr("href", $("#add-to-calendar").attr('data-href')); // Switch icon state (off)
         $("#calendar-button").on('click', function(){
             window.location = $("#calendar-button").attr('href');    
