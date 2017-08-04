@@ -580,8 +580,8 @@ define([
             
             // Change nav bar title
             // Todo: create a generic function
-            if ( $('#app-header > h1').html() != 'Article' ) {
-                $('#app-header > h1').html('Article');
+            if ( $('#app-header > h1').html() != 'Détail de l\'événement' ) {
+                $('#app-header > h1').html('Détail de l\'événement');
             }
         }
 
@@ -745,9 +745,13 @@ define([
     $("#app-layout").on("touchend","#back-button",backButtonTapOff);
 
     // Comments button events
-    $("#app-layout").on("touchstart","#comments-button",commentsButtonTapOn);
-    $("#app-layout").on("touchend","#comments-button",commentsButtonTapOff);
+//    $("#app-layout").on("touchstart","#comments-button",commentsButtonTapOn);
+//    $("#app-layout").on("touchend","#comments-button",commentsButtonTapOff);
     
+//    // Add to calendar button events
+    $("#app-layout").on("touchstart","#calendar-button",calendarButtonTapOn);
+//    $("#app-layout").on("touchend","#calendar-button",calendarButtonTapOff);
+
     // Share button events
     $("#app-layout").on("touchstart","#share-button",shareButtonTapOn);
     $("#app-layout").on("touchend","#share-button",shareButtonTapOff);
@@ -799,6 +803,7 @@ define([
         
         $("#app-canvas").velocity({
 			left:"85%",
+
         }, {
             duration: 300,
             complete: function() {
@@ -1255,5 +1260,18 @@ define([
         return last_posts;
         
 	}
+    
+    /*
+     * 11. Add to Calendar button
+     */
+    
+    // @desc Finger taps the calendar button
+    function calendarButtonTapOn(e) {
+        e.preventDefault();
+        $("#calendar-button").attr("href", $("#add-to-calendar").attr('data-href')); // Switch icon state (off)
+        $("#calendar-button").on('click', function(){
+            window.location = $("#calendar-button").attr('href');    
+       });
+    }    
     
 });

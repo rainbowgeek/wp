@@ -53,7 +53,9 @@
 
                         <img class="content-thumbnail" src="<%= post.thumbnail.src %>" onerror="displayDefaultImage(this);" />
 
-                    <% } %>	
+                    <% } else { %>
+                    	<span class="content-thumbnail no-thumbnail"></span>
+                    <% } %>
                     
                         
 				</a>
@@ -63,7 +65,7 @@
 
         <% if( TemplateTags.displayGetMoreLink() ){ %>
 			<div class="get-more-button-wrapper">
-                <button type="button" id="get-more-button" class="get-more-button">Plus d'événements (<%= TemplateTags.getMoreLinkNbLeft() %>)</button>
+                <button type="button" id="get-more-button" class="get-more-button">Plus d'événements</button>
             
             </div>
 		<% } %>
