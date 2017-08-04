@@ -1270,7 +1270,11 @@ define([
         e.preventDefault();
         
         var startDate = new Date($("#add-to-calendar").attr('data-start-date')); // beware: month 0 = january, 11 = december
-        var endDate = new Date($("#add-to-calendar").attr('data-end-date'));
+        if ($("#add-to-calendar").attr('data-end-date')) {
+        	var endDate = new Date($("#add-to-calendar").attr('data-end-date'));
+        } else {
+        	var endDate = new Date($("#add-to-calendar").attr('data-start-date'));
+        }
         var title = $("#add-to-calendar").attr('data-title');
         var eventLocation = $("#add-to-calendar").attr('data-location');
         var success = function(message) { alert("Success: " + JSON.stringify(message)); };
