@@ -1269,7 +1269,7 @@ define([
         e.preventDefault();
 
         var title = $("#add-to-calendar").attr('data-title');
-        var notes = '';
+        var notes = 'Test';
         var eventLocation = $("#add-to-calendar").attr('data-location');
         var startDate = new Date($("#add-to-calendar").attr('data-start-date')).toGMTString(); // beware: month 0 = january, 11 = december
         
@@ -1280,7 +1280,6 @@ define([
         }
        
         if (startDate && endDate) {
-        	alert(startDate + endDate);
         	window.plugins.calendar.createEventInteractively(title,eventLocation,notes,startDate,endDate);
         }
     }
