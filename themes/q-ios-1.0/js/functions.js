@@ -1271,18 +1271,17 @@ define([
         var notes = '';
         var eventLocation = $("#add-to-calendar").attr('data-location');
         var startDate = new Date($("#add-to-calendar").attr('data-start-date'));
-        startDate = startDate.toUTCString();
+        //startDate = startDate.toUTCString();
         
         if ($("#add-to-calendar").attr('data-end-date')) {
         	var endDate = new Date($("#add-to-calendar").attr('data-end-date'));
-        	endDate = endDate.toUTCString();
+        	//endDate = endDate.toUTCString();
         } else {
         	var endDate = new Date($("#add-to-calendar").attr('data-start-date'));
-        	endDate = endDate.toUTCString();
+        	//endDate = endDate.toUTCString();
         }
        
         if (startDate && endDate) {
-        	alert(startDate);
         	window.plugins.calendar.createEventInteractively(title,eventLocation,notes,startDate,endDate);
         }
     }
