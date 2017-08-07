@@ -1273,25 +1273,24 @@ define([
         var eventLocation = $("#add-to-calendar").attr('data-location');
         var startDate = new Date($("#add-to-calendar").attr('data-start-date')); // beware: month 0 = january, 11 = december
         
-        //if ($("#add-to-calendar").attr('data-end-date')) {
+        if ($("#add-to-calendar").attr('data-end-date')) {
         	var endDate = new Date($("#add-to-calendar").attr('data-end-date'));
-        //} else {
-        	//var endDate = new Date($("#add-to-calendar").attr('data-start-date'));
-        //}
+        } else {
+        	var endDate = new Date($("#add-to-calendar").attr('data-start-date'));
+        }
         
-        //$("#calendar-button").removeClass("button-tap-off").addClass("button-tap-on"); // Switch icon state (on)
-//        $("#app-layout").removeClass("blur-off").addClass("blur-on"); // Blur background
+        $("#calendar-button").removeClass("button-tap-off").addClass("button-tap-on"); // Switch icon state (on)
+        $("#app-layout").removeClass("blur-off").addClass("blur-on"); // Blur background
         
-        //$("#calendar-button").on('click', function(){
-       // if (startDate && endDate) {
-        	window.plugins.calendar.createEventInteractively(title,eventLocation,startDate);
-        //}
-        //});
+        if (startDate && endDate) {
+        	alert(startDate + endDate);
+        	window.plugins.calendar.createEventInteractively(title,eventLocation,startDate,endDate);
+        }
     }    
     
     function calendarButtonTapOff(e) {
-    	//$("#calendar-button").removeClass("button-tap-on").addClass("button-tap-off"); // Switch icon state (off)
-    	//$("#app-layout").removeClass("blur-on").addClass("blur-off");
+    	$("#calendar-button").removeClass("button-tap-on").addClass("button-tap-off"); // Switch icon state (off)
+    	$("#app-layout").removeClass("blur-on").addClass("blur-off");
     }
     
 });
