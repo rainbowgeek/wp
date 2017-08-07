@@ -749,7 +749,6 @@ define([
     
 //    // Add to calendar button events
     $("#app-layout").on("click","#calendar-button",calendarButtonTapOn);
-    $("#app-layout").on("touchend","#calendar-button",calendarButtonTapOff);
 
     // Share button events
     $("#app-layout").on("touchstart","#share-button",shareButtonTapOn);
