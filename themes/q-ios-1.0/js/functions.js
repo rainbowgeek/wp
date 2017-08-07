@@ -1270,12 +1270,12 @@ define([
         var title = $("#add-to-calendar").attr('data-title');
         var notes = '';
         var eventLocation = $("#add-to-calendar").attr('data-location');
-        var startDate = new Date($("#add-to-calendar").attr('data-start-date')).toGMTString(); // beware: month 0 = january, 11 = december
+        var startDate = new Date($("#add-to-calendar").attr('data-start-date')).toUTCString(); // beware: month 0 = january, 11 = december
         
         if ($("#add-to-calendar").attr('data-end-date')) {
-        	var endDate = new Date($("#add-to-calendar").attr('data-end-date')).toGMTString();
+        	var endDate = new Date($("#add-to-calendar").attr('data-end-date')).toUTCString();
         } else {
-        	var endDate = new Date($("#add-to-calendar").attr('data-start-date')).toGMTString();
+        	var endDate = new Date($("#add-to-calendar").attr('data-start-date')).toUTCString();
         }
        
         if (startDate && endDate) {
