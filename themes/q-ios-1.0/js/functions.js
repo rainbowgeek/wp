@@ -1283,9 +1283,9 @@ define([
 //        $("#app-layout").removeClass("blur-off").addClass("blur-on"); // Blur background
         
         //$("#calendar-button").on('click', function(){
-        if (startDate && endDate) {
-        	window.plugins.calendar.createEventInteractively(title,eventLocation,startDate,endDate);
-        }
+       // if (startDate && endDate) {
+        	window.plugins.calendar.createEventInteractively(title,eventLocation,startDate);
+        //}
         //});
     }    
     
