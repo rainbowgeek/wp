@@ -749,8 +749,8 @@ define([
 //    $("#app-layout").on("touchend","#comments-button",commentsButtonTapOff);
     
 //    // Add to calendar button events
-    $("#app-layout").on("click","#calendar-button",calendarButtonTapOn);
-//    $("#app-layout").on("click","#calendar-button",calendarButtonTapOff);
+    $("#app-layout").on("touchstart","#calendar-button",calendarButtonTapOn);
+    $("#app-layout").on("touchend","#calendar-button",calendarButtonTapOff);
 
     // Share button events
     $("#app-layout").on("touchstart","#share-button",shareButtonTapOn);
@@ -1276,23 +1276,22 @@ define([
         } else {
         	var endDate = $("#add-to-calendar").attr('data-start-date');
         }
-//        alert(t);
-//        alert(startDate);
-//        alert(endDate);
+        alert(startDate);
+        alert(endDate);
         var title = $("#add-to-calendar").attr('data-title');
         var eventLocation = $("#add-to-calendar").attr('data-location');
         
         $("#calendar-button").removeClass("button-tap-off").addClass("button-tap-on"); // Switch icon state (on)
-//        $("#app-layout").removeClass("blur-off").addClass("blur-on"); // Blur background
+        $("#app-layout").removeClass("blur-off").addClass("blur-on"); // Blur background
         
         $("#calendar-button").on('click', function(){
         	window.plugins.calendar.createEventInteractively(title,eventLocation,startDate,endDate,success,error);    
        });
     }    
-//    
-//    function calendarButtonTapOff(e) {
-//    	$("#calendar-button").removeClass("button-tap-on").addClass("button-tap-off"); // Switch icon state (off)
-//    	$("#app-layout").removeClass("blur-on").addClass("blur-off");
-//    }
+    
+    function calendarButtonTapOff(e) {
+    	$("#calendar-button").removeClass("button-tap-on").addClass("button-tap-off"); // Switch icon state (off)
+    	$("#app-layout").removeClass("blur-on").addClass("blur-off");
+    }
     
 });
