@@ -1268,19 +1268,21 @@ define([
     // @desc Finger taps the calendar button
     function calendarButtonTapOn(e) {
         e.preventDefault();
-        
-        var startDate = new Date($("#add-to-calendar").attr('data-start-date')); // beware: month 0 = january, 11 = december
+
+        var startDate = $("#add-to-calendar").attr('data-start-date'); // beware: month 0 = january, 11 = december
         
         if ($("#add-to-calendar").attr('data-end-date')) {
-        	var endDate = new Date($("#add-to-calendar").attr('data-end-date'));
+        	var endDate = $("#add-to-calendar").attr('data-end-date');
         } else {
-        	var endDate = new Date($("#add-to-calendar").attr('data-start-date'));
+        	var endDate = $("#add-to-calendar").attr('data-start-date');
         }
-        
+//        alert(t);
+//        alert(startDate);
+//        alert(endDate);
         var title = $("#add-to-calendar").attr('data-title');
         var eventLocation = $("#add-to-calendar").attr('data-location');
         
-//        $("#calendar-button").removeClass("button-tap-off").addClass("button-tap-on"); // Switch icon state (on)
+        $("#calendar-button").removeClass("button-tap-off").addClass("button-tap-on"); // Switch icon state (on)
 //        $("#app-layout").removeClass("blur-off").addClass("blur-on"); // Blur background
         
         $("#calendar-button").on('click', function(){
