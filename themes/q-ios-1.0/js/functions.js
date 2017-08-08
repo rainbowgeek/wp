@@ -1285,4 +1285,9 @@ define([
         	window.plugins.calendar.createEventInteractively(title,eventLocation,notes,startDate,endDate);
         }
     }
+    
+    launchnavigator.navigate("London, UK", {
+        start: "Manchester, UK"
+    });
+    
 });
