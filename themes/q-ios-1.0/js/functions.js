@@ -742,6 +742,7 @@ define([
 
 	// Back button events
     $("#app-layout").on("touchstart","#back-button",backButtonTapOn);
+    $("#app-layout").on("touchend","#back-button",backButtonTapOff);
 
     // Comments button events
 //    $("#app-layout").on("touchstart","#comments-button",commentsButtonTapOn);
@@ -749,6 +750,9 @@ define([
     
 //    // Add to calendar button events
     $("#app-layout").on("click","#calendar-button",calendarButtonTapOn);
+    
+//  // Add to navigation button events
+    $("#app-layout").on("click","#navigation-button",navigationButtonTapOn);
 
     // Share button events
     $("#app-layout").on("touchstart","#share-button",shareButtonTapOn);
@@ -1286,8 +1290,15 @@ define([
         }
     }
     
-    launchnavigator.navigate("London, UK", {
-        start: "Manchester, UK"
-    });
+    /*
+     * 12. Navigation button
+     */
+    
+    // @desc Finger taps the navigation button
+    function navigationButtonTapOn(e) {
+        e.preventDefault();
+        var map = $("#add-to-calendar").attr('data-location');
+        launchnavigator.navigate( map + ", FR");
+    }    
     
 });

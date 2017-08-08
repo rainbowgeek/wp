@@ -305,6 +305,20 @@
     background-image: url(../img/add-calendar-icon.svg);
 }
 
+/*
+ * Navigation button
+ */
+ 
+#app-toolbar .navigation-button {
+    position: absolute;
+    right: 120px;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 40px;
+    height: 44px;
+    background-image: url(../img/navigation-icon.svg);
+}
+
 
 /*
  * Latest posts
