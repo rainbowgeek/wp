@@ -1298,7 +1298,7 @@ define([
     function navigationButtonTapOn(e) {
         e.preventDefault();
         var map = $("#add-to-calendar").attr('data-location');
-        launchnavigator.navigate( map + ", FR");
+        launchnavigator.navigate( map );
     }    
     
 });
