@@ -5,11 +5,11 @@
 	 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 32 32"
 	 style="enable-background:new 0 0 32 32;" xml:space="preserve">
 <style type="text/css">
-	.st0{fill:#357BF7;}
-	.st1{font-family:'FontAwesome';}
-	.st2{font-size:25.6918px;}
+	.st0{fill:none;stroke:#337BF7;stroke-width:2;stroke-miterlimit:10;}
+	.st1{fill:#337BF7;stroke:#337BF7;stroke-width:2;stroke-miterlimit:10;}
 </style>
-<sodipodi:namedview  bordercolor="#666666" borderopacity="1" fit-margin-bottom="0" fit-margin-left="0" fit-margin-right="0" fit-margin-top="0" gridtolerance="10" guidetolerance="10" id="namedview4145" inkscape:current-layer="Layer_1" inkscape:cx="3.5679702" inkscape:cy="17.380246" inkscape:pageopacity="0" inkscape:pageshadow="2" inkscape:window-height="690" inkscape:window-maximized="0" inkscape:window-width="1074" inkscape:window-x="25" inkscape:window-y="0" inkscape:zoom="10.74" objecttolerance="10" pagecolor="#ffffff" showgrid="false">
-	</sodipodi:namedview>
-<text transform="matrix(1 0 0 1 1.3188 25.4661)" class="st0 st1 st2"></text>
+<g>
+	<line class="st0" x1="16" y1="13.7" x2="16" y2="29.2"/>
+	<circle class="st1" cx="16" cy="7.8" r="5"/>
+</g>
 </svg>
